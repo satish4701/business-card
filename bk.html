@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Business card - Grow Your Business</title>
+  
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    
+  </head>
+  <body>
+    <div class="main_content">
+      <div class="container">
+        <h1 class="text-center">QR VCard Generator</h1>
+        <form class="form-inline">
+          <div class="row">
+            <div class="form-group col-sm-3">
+              <label for="firstName">First Name</label>
+              <br />
+              <input type="text" class="form-control" id="firstName" value="" name="firstName" />
+            </div>
+            <div class="form-group col-sm-3">
+              <label for="lastName">Last Name</label>
+              <br />
+              <input type="text" class="form-control" id="lastName" name="lastName" value="" />
+            </div>
+            <div class="form-group col-sm-3">
+              <label for="posTitle">Position Title</label>
+              <br />
+              <input type="text" class="form-control" id="posTitle" name="posTitle" value="" />
+            </div>
+            <div class="form-group col-sm-3">
+              <label for="coName">Company/Organization</label>
+              <br />
+              <input type="text" class="form-control" id="coName" name="coName" value="" />
+            </div>
+            <div class="form-group col-sm-3">
+              <label for="addyStreet">Street</label>
+              <br />
+              <input type="text" class="form-control" id="addyStreet" name="addyStreet" value="" />
+            </div>
+            <div class="form-group col-sm-3">
+              <label for="addyCity">City</label>
+              <br />
+              <input type="text" class="form-control" id="addyCity" name="addyCity" value="" />
+            </div>
+            <div class="form-group col-sm-3">
+              <label for="addyState">State</label>
+              <br />
+              <input type="text" class="form-control" id="addyState" name="addyState" value="" />
+            </div>
+            <div class="form-group col-sm-3">
+              <label for="addyZip">Zip Code</label>
+              <br />
+              <input type="text" class="form-control" id="addyZip" name="addyZip" value="" />
+            </div>
+  
+            <div class="form-group col-sm-3">
+              <label for="emailPersonal">Email (Personal)</label>
+              <br />
+              <input 
+                type="email"
+                class="form-control col-sm-4"
+                id="emailPersonal"
+                placeholder="john.doe@example.com" name="emailPersonal" value=""
+              />
+            </div>
+           
+            <div class="form-group col-sm-3">
+              <label for="phonePersonal">Phone </label>
+              <br />
+              <input 
+                type="tel"
+                class="form-control col-sm-4"
+                id="phonePersonal"
+                placeholder="###-###-####" name="phonePersonal" value=""
+              />
+            </div>
+         
+           
+            <div class="form-group col-sm-3">
+              <label for="website">Website</label>
+              <br />
+              <input 
+                type="url"
+                class="form-control col-sm-4"
+                id="website"
+                placeholder="http://www.example.com" name="website" value=""
+              />
+            </div>
+          </div>
+          <button type="submit">Submit</button>
+          <!-- <p class="small">
+            Using the API from
+            <a href="http://goqr.me/api/" target="_blank">GoQR.me</a>.
+          </p>
+          <div class="qr-out row">
+            <img class="qr-img" alt="" />
+          </div>
+          <div class="biscard-out"></div> -->
+        </form>
+      </div>
+  
+      <div class="card_hero">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-6">
+                      <div class="front_part">
+                          <div class="row">
+                              <div class="col-lg-6 border">
+                                 <p class="fullName"> <span id="firstNameView"></span>
+                                  <span id="lastNameView"></span></p>
+  
+                                  <p id="posTitleView"></p>
+                              </div>
+
+                              <div class="col-lg-6">
+                                <div class="back_shap">
+
+                                </div>
+                              </div>
+                              
+                          </div>
+                      </div>
+                     
+                  </div>
+                  <div class="col-lg-6">
+                        <div class="back_part">
+                            <div class="qr-out">
+                                <div id="qrcode"></div>
+                              </div>
+                        </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+     
+  // Function to update the view with input valu es
+  function updateView() {
+    let front_part = document.getElementsByClassName('front_part')[0];
+    let back_part = document.getElementsByClassName('back_part')[0];
+    front_part.classList.add('active')
+    back_part.classList.add('active')
+    // Get input valu es
+    var firstName = document.getElementById("firstName").value;
+    var lastName = document.getElementById("lastName").value;
+    var phonePersonal = document.getElementById("phonePersonal").value;
+    var emailPersonal = document.getElementById("emailPersonal").value;
+    var posTitle = document.getElementById("posTitle").value;
+    console.log(posTitle)
+    var coName = document.getElementById("coName").value;
+    var addyStreet = document.getElementById("addyStreet").value;
+    var addyCity = document.getElementById("addyCity").value;
+    var addyState = document.getElementById("addyState").value;
+    var addyZip = document.getElementById("addyZip").value;
+
+    // Update view elements
+    document.getElementById("firstNameView").textContent = firstName;
+    document.getElementById("lastNameView").textContent =  lastName;
+    document.getElementById("phonePersonalView").textContent = phonePersonal;
+    document.getElementById("emailPersonalView").textContent = emailPersonal;
+    document.getElementById("posTitleView").textContent =  posTitle;
+    document.getElementById("coNameView").textContent =  coName;
+    document.getElementById("addressView").textContent = addyStreet + ", " + addyCity + ", " + addyState + " " + addyZip;
+  }
+
+  function generateQRCode() {
+    var qrData = {
+      firstName: document.getElementById("firstName").value,
+      lastName: document.getElementById("lastName").value,
+      phonePersonal: document.getElementById("phonePersonal").value,
+      emailPersonal: document.getElementById("emailPersonal").value,
+      posTitle: document.getElementById("posTitle").value,
+      coName: document.getElementById("coName").value,
+      addyStreet: document.getElementById("addyStreet").value,
+      addyCity: document.getElementById("addyCity").value,
+      addyState: document.getElementById("addyState").value,
+      addyZip: document.getElementById("addyZip").value,
+    };
+
+    // Convert the data to a JSON string
+    var qrDataString = JSON.stringify(qrData);
+
+    // Generate QR code
+    var qrcode = new QRCode(document.getElementById("qrcode"), {
+      text: qrDataString,
+   
+    });
+  }
+
+  // Attach the updateView function to the form's submit event
+  document.querySelector("form").addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent the form from actually submitting
+    updateView(); // Call the function to update the view
+    generateQRCode()
+  });
+</script>
+
+       
+
+      
+    </script>
+  </body>
+</html>

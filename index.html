@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Business card - Grow Your Business</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/card.css">
+
+</head>
+
+<body>
+  <div class="main_content">
+    <div class="container">
+      <h1 class="text-center">QR VCard Generator</h1>
+      <form class="form-inline">
+        <div class="row">
+          <div class="form-group col-sm-3">
+            <label for="firstName">First Name</label>
+            <br />
+            <input type="text" class="form-control" id="firstName" value="" name="firstName" />
+          </div>
+          <div class="form-group col-sm-3">
+            <label for="lastName">Last Name</label>
+            <br />
+            <input type="text" class="form-control" id="lastName" name="lastName" value="" />
+          </div>
+          <div class="form-group col-sm-3">
+            <label for="posTitle">Position Title</label>
+            <br />
+            <input type="text" class="form-control" id="posTitle" name="posTitle" value="" />
+          </div>
+          <div class="form-group col-sm-3">
+            <label for="coName">Company/Organization</label>
+            <br />
+            <input type="text" class="form-control" id="coName" name="coName" value="" />
+          </div>
+          <div class="form-group col-sm-3">
+            <label for="addyStreet">Street</label>
+            <br />
+            <input type="text" class="form-control" id="addyStreet" name="addyStreet" value="" />
+          </div>
+          <div class="form-group col-sm-3">
+            <label for="addyCity">City</label>
+            <br />
+            <input type="text" class="form-control" id="addyCity" name="addyCity" value="" />
+          </div>
+          <div class="form-group col-sm-3">
+            <label for="addyState">State</label>
+            <br />
+            <input type="text" class="form-control" id="addyState" name="addyState" value="" />
+          </div>
+          <div class="form-group col-sm-3">
+            <label for="addyZip">Zip Code</label>
+            <br />
+            <input type="text" class="form-control" id="addyZip" name="addyZip" value="" />
+          </div>
+
+          <div class="form-group col-sm-3">
+            <label for="emailPersonal">Email (Personal)</label>
+            <br />
+            <input type="email" class="form-control col-sm-4" id="emailPersonal" placeholder="john.doe@example.com"
+              name="emailPersonal" value="" />
+          </div>
+
+          <div class="form-group col-sm-3">
+            <label for="phonePersonal">Phone </label>
+            <br />
+            <input type="tel" class="form-control col-sm-4" id="phonePersonal" placeholder="###-###-####"
+              name="phonePersonal" value="" />
+          </div>
+
+
+          <div class="form-group col-sm-3">
+            <label for="website">Website</label>
+            <br />
+            <input type="url" class="form-control col-sm-4" id="website" placeholder="http://www.example.com"
+              name="website" value="" />
+          </div>
+        </div>
+        <button type="submit" class="btn btn-secondary mt-4">Submit</button>
+
+      </form>
+    </div>
+
+    <!-- card -->
+    <div class="wrapper">
+      <header>
+        <!--  attribution    -->
+        <div class="attribution">
+          <a href='https://satish4701.github.io/satishdev/'>Satish Rathod</a>
+        </div>
+      </header>
+      <main class="main container">
+        <section class="first front_part">
+          <div id="front" class="card">
+            <div class="top"></div>
+            <div class="logo">
+              <div class="symbol">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 60 60"
+                  style="enable-background:new 0 0 60 60;" xml:space="preserve">
+                  <polygon class="hexagon" points="54.5,43.9 30,57.8 5.5,43.9 5.5,16.1 30,2.2 54.5,16.1 " />
+                </svg>
+              </div>
+              <h1 id="coNameView"> </h1>
+              <h2 id="posTitleView"></h2>
+            </div>
+            <div class="bottom">
+              <div class="inner-div"></div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div id="back" class="card back_part">
+            <div class="top">
+            </div>
+            <div class="mid">
+              <div class="inner-div">
+                <h1 class="designer typography" id="firstNameView"><span id="lastNameView"> </span></h1>
+                <h2 class="title typography" id="posTitleView2"></h2>
+                <div class="icons">
+                  <div class="icon"><i class="fa fa-envelope"></i><span id="emailPersonalView"></span></div>
+                  <div class="icon"><i class="fa fa-home"></i><span id="addressView"><br /> <span
+                        id="addyCityView"></span> <br> <span id="addyZipView"></span></span></div>
+                  <div class="icon"><i class="fa fa-globe"></i><span id="websiteView"></span></div>
+                </div>
+                <div class="qr ">
+
+                  <div id="qrcode">
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="bottom">
+              <div class="inner-div"></div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+
+    </div>
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"></script>
+
+    <script>
+
+      // Function to update the view with input valu es
+      function updateView() {
+        let front_part = document.getElementsByClassName('front_part')[0];
+        let back_part = document.getElementsByClassName('back_part')[0];
+        front_part.classList.add('active')
+        back_part.classList.add('active')
+        // Get input valu es
+        let firstName = document.getElementById("firstName").value;
+        let lastName = document.getElementById("lastName").value;
+        let phonePersonal = document.getElementById("phonePersonal").value;
+        let emailPersonal = document.getElementById("emailPersonal").value;
+        let posTitle = document.getElementById("posTitle").value;
+        // console.log(posTitle)
+        let coName = document.getElementById("coName").value;
+        let addyStreet = document.getElementById("addyStreet").value;
+        let addyCity = document.getElementById("addyCity").value;
+        let addyState = document.getElementById("addyState").value;
+        let addyZip = document.getElementById("addyZip").value;
+        let website = document.getElementById("website").value;
+
+        // Update view elements
+        document.getElementById("firstNameView").textContent = firstName;
+        // document.getElementById("firstNameView2").textContent = firstName;
+        // document.getElementById("lastNameView").textContent =  lastName;
+        // document.getElementById("phonePersonalView").textContent = phonePersonal;
+        document.getElementById("emailPersonalView").textContent = emailPersonal;
+        document.getElementById("posTitleView").textContent = posTitle;
+        document.getElementById("posTitleView2").textContent = posTitle;
+        document.getElementById("coNameView").textContent = coName;
+        document.getElementById("addressView").textContent = addyStreet;
+        // document.getElementById("addyCityView").textContent =  addyCity;
+        document.getElementById("addyStateView").textContent = addyState;
+        document.getElementById("addyZipView").textContent = addyZip;
+        document.getElementById("websiteView").textContent = website;
+      }
+
+      function generateQRCode() {
+        var qrData = {
+          firstName: document.getElementById("firstName").value,
+          lastName: document.getElementById("lastName").value,
+          phonePersonal: document.getElementById("phonePersonal").value,
+          emailPersonal: document.getElementById("emailPersonal").value,
+          posTitle: document.getElementById("posTitle").value,
+          coName: document.getElementById("coName").value,
+          addyStreet: document.getElementById("addyStreet").value,
+          addyCity: document.getElementById("addyCity").value,
+          addyState: document.getElementById("addyState").value,
+          addyZip: document.getElementById("addyZip").value,
+        };
+
+        // Convert the data to a JSON string
+        var qrDataString = JSON.stringify(qrData);
+
+        // Generate QR code
+        var qrcode = new QRCode(document.getElementById("qrcode"), {
+          text: qrDataString,
+          width: 128,
+  height: 128,
+
+        });
+      }
+
+      // Attach the updateView function to the form's submit event
+      document.querySelector("form").addEventListener("submit", function (e) {
+        e.preventDefault(); // Prevent the form from actually submitting
+        updateView(); // Call the function to update the view
+        generateQRCode()
+      });
+    </script>
+
+
+
+
+    </script>
+</body>
+
+</html>
